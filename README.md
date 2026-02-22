@@ -39,7 +39,7 @@ docker run -d \
     -e RELAY_NICKNAME='ChangeMe' \
     -e CONTACT_EMAIL='tor[at]example[dot]com' \
     --name tor-relay \
-    hos7ein/tor-relay
+    ghcr.io/hos7ein/tor-relay/tor-relay:latest
 ```
 
 ### Deploy Bridge relay
@@ -54,7 +54,7 @@ docker run -d \
     -e RELAY_NICKNAME='ChangeMe' \
     -e CONTACT_EMAIL='tor[at]example[dot]com' \
     --name tor-relay \
-    hos7ein/tor-relay
+    ghcr.io/hos7ein/tor-relay/tor-relay:latest
 ```
 
 ### Deploy Exit relay
@@ -69,7 +69,7 @@ docker run -d \
     -e RELAY_NICKNAME='ChangeMe' \
     -e CONTACT_EMAIL='tor[at]example[dot]com' \
     --name tor-relay \
-    hos7ein/tor-relay
+    ghcr.io/hos7ein/tor-relay/tor-relay:latest
 ```
 
 ### Environment variables
