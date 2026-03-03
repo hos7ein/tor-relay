@@ -1,6 +1,6 @@
 # tor-relay
 
-[![CI](https://github.com/hos7ein/tor-relay/actions/workflows/docker-lint.yml/badge.svg)](https://github.com/hos7ein/tor-relay/actions/workflows/docker-lint.yml)
+[![CI](https://github.com/hos7ein/tor-relay/actions/workflows/markdown-check.yml/badge.svg)](https://github.com/hos7ein/tor-relay/actions/workflows/markdown-check.yml) [![CI](https://github.com/hos7ein/tor-relay/actions/workflows/pr-check.yml/badge.svg)](https://github.com/hos7ein/tor-relay/actions/workflows/pr-check.yml) [![CI](https://github.com/hos7ein/tor-relay/actions/workflows/release.yml/badge.svg)](https://github.com/hos7ein/tor-relay/actions/workflows/release.yml)
 [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](http://perso.crans.org/besson/LICENSE.html)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/hos7ein/ansible-fedora-packages/graphs/commit-activity)
 [![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://GitHub.com/hos7ein/ansible-fedora-packages)
@@ -14,9 +14,9 @@
   - [Table of contents](#table-of-contents)
   - [Introduction](#introduction)
   - [Requirements](#requirements)
-    - [Deploy Middle relay](#deploy-middle-relay)
-    - [Deploy Bridge relay](#deploy-bridge-relay)
-    - [Deploy Exit relay](#deploy-exit-relay)
+    - [Deploy Tor Middle relay](#deploy-tor-middle-relay)
+    - [Deploy Tor Bridge relay](#deploy-tor-bridge-relay)
+    - [Deploy Tor Exit relay](#deploy-tor-exit-relay)
     - [Environment variables](#environment-variables)
     - [Open nyx](#open-nyx)
   - [Contributing](#contributing)
@@ -25,13 +25,13 @@
 
 ## Introduction
 
-Docker image to setup a Tor relay with [nyx](https://nyx.torproject.org/) monitoring
+Container image to setup a Tor relay with [nyx](https://nyx.torproject.org/) monitoring
 
 ## Requirements
 
 - `Docker` or `Podman`
 
-### Deploy Middle relay
+### Deploy Tor Middle relay
 
 ```bash
 docker run -d \
@@ -45,7 +45,7 @@ docker run -d \
     ghcr.io/hos7ein/tor-relay:latest
 ```
 
-### Deploy Bridge relay
+### Deploy Tor Bridge relay
 
 ```bash
 docker run -d \
@@ -57,10 +57,10 @@ docker run -d \
     -e RELAY_NICKNAME='ChangeMe' \
     -e CONTACT_EMAIL='tor[at]example[dot]com' \
     --name tor-relay \
-    ghcr.io/hos7ein/tor-relay/tor-relay:latest
+    ghcr.io/hos7ein/tor-relay:latest
 ```
 
-### Deploy Exit relay
+### Deploy Tor Exit relay
 
 ```bash
 docker run -d \
@@ -72,7 +72,7 @@ docker run -d \
     -e RELAY_NICKNAME='ChangeMe' \
     -e CONTACT_EMAIL='tor[at]example[dot]com' \
     --name tor-relay \
-    ghcr.io/hos7ein/tor-relay/tor-relay:latest
+    ghcr.io/hos7ein/tor-relay:latest
 ```
 
 ### Environment variables
