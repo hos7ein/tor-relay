@@ -16,7 +16,7 @@ ENV RELAY_ACCOUNTING_START="day 00:00"
 RUN addgroup -g 1000 -S tor && \
     adduser -u 1000 -S tor -G tor && \
     apk update && \
-    apk add --no-cache tor nyx bash && \
+    apk add --no-cache tor nyx && \
     rm -rf /var/cache/apk/*
 
 VOLUME ["/var/lib/tor"]

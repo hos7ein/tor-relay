@@ -10,15 +10,18 @@
 
 ## Table of contents
 
-* [Introduction](#introduction)
-* [Requirements](#requirements)
-* [Deploy Middle relay](#Deploy-Middle-relay)
-* [Deploy Bridge relay](#Deploy-Bridge-relay)
-* [Deploy Exit relay](#Deploy-Exit-relay)
-* [Open nyx](#Open-nyx)
-* [Contributing](#contributing)
-* [Contact](#contact)
-* [License](#license)
+- [tor-relay](#tor-relay)
+  - [Table of contents](#table-of-contents)
+  - [Introduction](#introduction)
+  - [Requirements](#requirements)
+    - [Deploy Middle relay](#deploy-middle-relay)
+    - [Deploy Bridge relay](#deploy-bridge-relay)
+    - [Deploy Exit relay](#deploy-exit-relay)
+    - [Environment variables](#environment-variables)
+    - [Open nyx](#open-nyx)
+  - [Contributing](#contributing)
+  - [Contact](#contact)
+  - [License](#license)
 
 ## Introduction
 
@@ -26,7 +29,7 @@ Docker image to setup a Tor relay with [nyx](https://nyx.torproject.org/) monito
 
 ## Requirements
 
-* Docker/Podman
+- `Docker` or `Podman`
 
 ### Deploy Middle relay
 
@@ -39,7 +42,7 @@ docker run -d \
     -e RELAY_NICKNAME='ChangeMe' \
     -e CONTACT_EMAIL='tor[at]example[dot]com' \
     --name tor-relay \
-    ghcr.io/hos7ein/tor-relay/tor-relay:latest
+    ghcr.io/hos7ein/tor-relay:latest
 ```
 
 ### Deploy Bridge relay
