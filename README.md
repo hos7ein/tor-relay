@@ -29,7 +29,7 @@ Docker image to setup a Tor relay with [nyx](https://nyx.torproject.org/) monito
 
 ## Requirements
 
-* Docker/Podman
+- `Docker` or `Podman`
 
 ### Deploy Middle relay
 
