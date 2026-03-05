@@ -1,0 +1,37 @@
+[Unit]
+Description=Tor Relay
+
+After=network-online.target
+Wants=network-online.target
+
+[Container]
+Image=ghcr.io/hos7ein/tor-relay:latest
+Pull=newer
+ContainerName=tor-relay
+AutoUpdate=registry
+
+# Volumes
+Volume=tor-relay-data:/var/lib/tor:rw
+Volume=/etc/localtime:/etc/localtime:ro
+
+# Ports
+PublishPort=9001:9001
+
+# Environment variables
+Environment=RELAY_NICKNAME=ChangeMe
+Environment=CONTACT_EMAIL='tor[at]example[dot]com'
+Environment=RELAY_BANDWIDTH_RATE="1 MBytes"
+Environment=RELAY_BANDWIDTH_BURST="2 MBytes"
+Environment=RELAY_ACCOUNTING_MAX="10 TBytes"
+
+# Ulimits
+Ulimit=nofile=63536:63536
+
+# Sysctl
+Sysctl=net.ipv4.ip_local_port_range="1024 65535"
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target
