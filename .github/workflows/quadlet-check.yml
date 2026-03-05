@@ -1,0 +1,28 @@
+name: Quadlet Check
+
+on:
+  pull_request:
+    paths:
+      - 'tor-relay.container'
+
+jobs:
+  validate-quadlet:
+    name: Validate Quadlet file
+    runs-on: fedora-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up test directory
+        id: setup
+        run: |
+          TEST_DIR=$(mktemp -d)
+          echo "TEST_DIR=${TEST_DIR}" >> $GITHUB_OUTPUT
+          cp tor-relay.container "${TEST_DIR}/"
+
+      - name: Validate quadlet file syntax
+        run: |
+          QUADLET_GENERATOR=$(find /usr/lib/systemd /usr/libexec -name 'podman-system-generator' -o -name 'quadlet' | head -n 1)
+          if [ -z "$QUADLET_GENERATOR" ]; then echo "Quadlet generator not found."; exit 1; fi
+          QUADLET_UNIT_DIRS=${{ steps.setup.outputs.TEST_DIR }} $QUADLET_GENERATOR --dryrun --no-log
