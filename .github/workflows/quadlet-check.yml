@@ -8,7 +8,9 @@ on:
 jobs:
   validate-quadlet:
     name: Validate Quadlet file
-    runs-on: fedora-latest
+    runs-on: ubuntu-latest
+    container:
+      image: fedora:latest
 
     steps:
       - name: Checkout code
