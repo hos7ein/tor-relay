@@ -7,7 +7,7 @@ Wants=network-online.target
 [Container]
 Image=ghcr.io/hos7ein/tor-relay:latest
 Pull=newer
-ContainerName=tor-relay
+Containername=tor-relay
 AutoUpdate=registry
 
 # Volumes
