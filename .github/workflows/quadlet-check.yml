@@ -16,6 +16,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Check the Fedora version
+        run: cat /etc/os-release
+
+      - name: Install Podman
+        run: dnf install -y podman
+
       - name: Set up test directory
         id: setup
         run: |
