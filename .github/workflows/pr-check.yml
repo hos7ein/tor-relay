@@ -70,7 +70,7 @@ jobs:
 
       - name: Run container
         run: |
-          docker run -d --name tor-relay-test -e RELAY_NICKNAME='CI-Test' ghcr.io/${{ github.repository_owner }}/tor-relay:pr-${{ github.event.number }}
+          docker run -d --name tor-relay-test -e RELAY_NICKNAME='Test' ghcr.io/${{ github.repository_owner }}/tor-relay:pr-${{ github.event.number }}
           echo "Waiting for container to start..."
           sleep 10
           echo "Container logs:"
