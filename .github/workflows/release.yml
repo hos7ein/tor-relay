@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - main
+    paths:
+      - "Dockerfile"
+      - "torrc*"
+      - "run.sh"
 
 jobs:
   build_and_push_latest:
