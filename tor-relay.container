@@ -11,7 +11,7 @@ ContainerName=tor-relay
 AutoUpdate=registry
 
 # Volumes
-Volume=/path/to/tor-relay-dataa:/var/lib/tor:rw
+Volume=/path/to/tor-relay-data:/var/lib/tor:rw
 Volume=/etc/localtime:/etc/localtime:ro
 
 # Ports
