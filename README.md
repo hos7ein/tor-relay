@@ -18,6 +18,7 @@
     - [Deploy Tor Bridge relay](#deploy-tor-bridge-relay)
     - [Deploy Tor Exit relay](#deploy-tor-exit-relay)
     - [Environment variables](#environment-variables)
+    - [User / Group Identifiers](#user--group-identifiers)
     - [Open nyx](#open-nyx)
   - [Contributing](#contributing)
   - [Contact](#contact)
@@ -36,10 +37,12 @@ Container image to setup a Tor relay with [nyx](https://nyx.torproject.org/) mon
 ```bash
 docker run -d \
     --restart always \
-    -v tor-relay-data:/var/lib/tor:rw \
+    -v /path/to/tor-relay-data:/var/lib/tor:rw \
     -v /etc/localtime:/etc/localtime:ro \
     -p 9001:9001 \
     -e RELAY_NICKNAME='ChangeMe' \
+    -e USER_ID=$(id -u) \
+    -e GROUP_ID=$(id -g) \
     -e CONTACT_EMAIL='tor[at]example[dot]com' \
     --name tor-relay \
     ghcr.io/hos7ein/tor-relay:latest
@@ -50,11 +53,13 @@ docker run -d \
 ```bash
 docker run -d \
     --restart always \
-    -v tor-relay-data:/var/lib/tor:rw \
+    -v /path/to/tor-relay-data:/var/lib/tor:rw \
     -v /etc/localtime:/etc/localtime:ro \
     -p 9001:9001 \
     -e RELAY_TYPE='bridge' \
     -e RELAY_NICKNAME='ChangeMe' \
+    -e USER_ID=$(id -u) \
+    -e GROUP_ID=$(id -g) \
     -e CONTACT_EMAIL='tor[at]example[dot]com' \
     --name tor-relay \
     ghcr.io/hos7ein/tor-relay:latest
@@ -65,11 +70,13 @@ docker run -d \
 ```bash
 docker run -d \
     --restart always \
-    -v tor-relay-data:/var/lib/tor:rw \
+    -v /path/to/tor-relay-data:/var/lib/tor:rw \
     -v /etc/localtime:/etc/localtime:ro \
     -p 9001:9001 \
     -e RELAY_TYPE='exit' \
     -e RELAY_NICKNAME='ChangeMe' \
+    -e USER_ID=$(id -u) \
+    -e GROUP_ID=$(id -g) \
     -e CONTACT_EMAIL='tor[at]example[dot]com' \
     --name tor-relay \
     ghcr.io/hos7ein/tor-relay:latest
@@ -79,6 +86,8 @@ docker run -d \
 
 | Name                         | Description                                                                  | Default value |
 | ---------------------------- |:----------------------------------------------------------------------------:| -------------:|
+| **USER_ID**                  | The user ID to run tor as, to match host user                                | 1000          |
+| **GROUP_ID**                 | The group ID to run tor as, to match host user                               | 1000          |
 | **RELAY_TYPE**               | The type of relay (bridge, middle or exit)                                   | middle        |
 | **RELAY_NICKNAME**           | The nickname of your relay                                                   | ChangeMe      |
 | **CONTACT_GPG_FINGERPRINT**  | Your GPG ID or fingerprint                                                   | none          |
@@ -91,6 +100,24 @@ docker run -d \
 | **RELAY_CTRLPORT**           | Default port used for control interface (ControlPort)                        | 9051          |
 | **RELAY_ACCOUNTING_MAX**     | Default threshold for sent and recieve (AccountingMax)                       | 1 GBytes      |
 | **RELAY_ACCOUNTING_START**   | threshold rest (AccountingStart)                                             | day 00:00     |
+
+### User / Group Identifiers
+
+When using volumes (`-v` flags), permissions issues can arise between the host OS and the container, we avoid this issue by allowing you to specify the user `USER_ID` and group `GROUP_ID`.
+
+Ensure any volume directories on the host are owned by the same user you specify and any permissions issues will vanish like magic.
+
+In this instance `USER_ID=1000` and `GROUP_ID=1000`, to find yours use `id your_user` as below:
+
+```bash
+id your_user
+```
+
+Example output:
+
+```text
+uid=1000(your_user) gid=1000(your_user) groups=1000(your_user)
+```
 
 ### Open nyx
 
