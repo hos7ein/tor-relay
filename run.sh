@@ -2,6 +2,13 @@
 set -e
 set -o pipefail
 
+# Set default User/Group ID
+USER_ID=${USER_ID:-1000}
+GROUP_ID=${GROUP_ID:-1000}
+
+groupmod -o -g "$GROUP_ID" tor
+usermod -o -u "$USER_ID" tor
+
 for relaytype in bridge middle exit; do
 	file="/etc/tor/torrc.${relaytype}"
 
@@ -18,4 +25,5 @@ for relaytype in bridge middle exit; do
 	sed -i "s/RELAY_ACCOUNTING_START/${RELAY_ACCOUNTING_START}/g" "$file"
 done
 
-exec tor -f "/etc/tor/torrc.${RELAY_TYPE}"
+echo "Starting Tor with UID: $(id -u tor) and GID: $(id -g tor)"
+exec su-exec tor tor -f "/etc/tor/torrc.${RELAY_TYPE}"
