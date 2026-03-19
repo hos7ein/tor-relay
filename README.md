@@ -1,6 +1,6 @@
 # tor-relay
 
-[![CI](https://github.com/hos7ein/tor-relay/actions/workflows/markdown-check.yml/badge.svg)](https://github.com/hos7ein/tor-relay/actions/workflows/markdown-check.yml) [![CI](https://github.com/hos7ein/tor-relay/actions/workflows/pr-check.yml/badge.svg)](https://github.com/hos7ein/tor-relay/actions/workflows/pr-check.yml) [![CI](https://github.com/hos7ein/tor-relay/actions/workflows/release.yml/badge.svg)](https://github.com/hos7ein/tor-relay/actions/workflows/release.yml)
+[![CI](https://github.com/hos7ein/tor-relay/actions/workflows/markdown-check.yml/badge.svg)](https://github.com/hos7ein/tor-relay/actions/workflows/markdown-check.yml) [![CI](https://github.com/hos7ein/tor-relay/actions/workflows/pr-check.yml/badge.svg)](https://github.com/hos7ein/tor-relay/actions/workflows/pr-check.yml) [![CI](https://github.com/hos7ein/tor-relay/actions/workflows/release.yml/badge.svg)](https://github.com/hos7ein/tor-relay/actions/workflows/release.yml) [![CI](https://github.com/hos7ein/tor-relay/actions/workflows/quadlet-check.yml/badge.svg)](https://github.com/hos7ein/tor-relay/actions/workflows/quadlet-check.yml)
 [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](http://perso.crans.org/besson/LICENSE.html)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/hos7ein/ansible-fedora-packages/graphs/commit-activity)
 [![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://GitHub.com/hos7ein/ansible-fedora-packages)
