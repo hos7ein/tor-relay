@@ -22,8 +22,8 @@ Environment=USER_ID=1000
 Environment=GROUP_ID=1000
 Environment=RELAY_NICKNAME=ChangeMe
 Environment=CONTACT_EMAIL='tor[at]example[dot]com'
-Environment=RELAY_BANDWIDTH_RATE="1 MBytes"
-Environment=RELAY_BANDWIDTH_BURST="2 MBytes"
+Environment=RELAY_BANDWIDTH_RATE="2 MBytes"
+Environment=RELAY_BANDWIDTH_BURST="3 MBytes"
 Environment=RELAY_ACCOUNTING_MAX="10 TBytes"
 
 # Ulimits
