@@ -9,18 +9,13 @@ jobs:
   validate-quadlet:
     name: Validate Quadlet file
     runs-on: ubuntu-latest
-    container:
-      image: fedora:latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v6
 
-      - name: Check the Fedora version
-        run: cat /etc/os-release
-
       - name: Install Podman
-        run: dnf install -y podman
+        run: apt-get update && apt-get install-y podman
 
       - name: Set up test directory
         id: setup
