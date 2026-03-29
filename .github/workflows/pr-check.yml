@@ -3,7 +3,7 @@ name: PR Check
 on:
   pull_request:
     paths:
-      - "Dockerfile"
+      - "Containerfile"
       - "torrc*"
       - "run.sh"
 
@@ -18,7 +18,7 @@ jobs:
       - name: Run Hadolint
         uses: hadolint/hadolint-action@v3.3.0
         with:
-          dockerfile: Dockerfile
+          dockerfile: Containerfile
           ignore: ./.hadolint.yaml
 
   build:
@@ -40,7 +40,7 @@ jobs:
       - name: Build image
         uses: docker/build-push-action@v6
         with:
-          context: .
+          file: ./Containerfile
           no-cache: true
           platforms: linux/amd64,linux/arm64,linux/arm/v7
           push: false # Do not push on PRs
@@ -63,7 +63,8 @@ jobs:
       - name: Build image for test
         uses: docker/build-push-action@v6
         with:
-          context: .
+          file: ./Containerfile
+          no-cache: true
           load: true # Load image into docker
           platforms: linux/amd64 # Build only for the runner architecture
           tags: ghcr.io/${{ github.repository_owner }}/tor-relay:pr-${{ github.event.number }}
