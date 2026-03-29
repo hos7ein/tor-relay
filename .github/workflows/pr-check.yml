@@ -63,7 +63,8 @@ jobs:
       - name: Build image for test
         uses: docker/build-push-action@v6
         with:
-          file: ./Containerfile
+          context: .
+          no-cache: true
           load: true # Load image into docker
           platforms: linux/amd64 # Build only for the runner architecture
           tags: ghcr.io/${{ github.repository_owner }}/tor-relay:pr-${{ github.event.number }}
