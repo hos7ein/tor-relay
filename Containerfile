@@ -16,7 +16,7 @@ ENV RELAY_NICKNAME="ChangeMe" \
 
 # Install packages
 RUN apk update && \
-    apk add --no-cache tor shadow su-exec bash && \
+    apk add --no-cache tor nyx shadow su-exec bash && \
     rm -rf /var/cache/apk/* && \
     mkdir -p /var/lib/tor
 
