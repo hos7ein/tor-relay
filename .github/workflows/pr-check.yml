@@ -63,7 +63,6 @@ jobs:
       - name: Build image for test
         uses: docker/build-push-action@v6
         with:
-          context: .
           file: ./Containerfile
           no-cache: true
           load: true # Load image into docker
