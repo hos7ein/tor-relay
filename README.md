@@ -78,6 +78,7 @@ docker run -d \
 ### Environment variables
 
 | Name                         | Description                                                                  | Default value |
+| ---------------------------- |:----------------------------------------------------------------------------:| -------------:|
 | **RELAY_TYPE**               | The type of relay (bridge, middle or exit)                                   | middle        |
 | **RELAY_NICKNAME**           | The nickname of your relay                                                   | ChangeMe      |
 | **CONTACT_GPG_FINGERPRINT**  | Your GPG ID or fingerprint                                                   | none          |
