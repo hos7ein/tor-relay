@@ -11,15 +11,13 @@ ContainerName=tor-relay
 AutoUpdate=registry
 
 # Volumes
-Volume=/path/to/tor-relay-data:/var/lib/tor:rw
+Volume=%h/volumes/tor/data:/var/lib/tor:Z
 Volume=/etc/localtime:/etc/localtime:ro
 
 # Ports
 PublishPort=9001:9001
 
 # Environment variables
-Environment=USER_ID=1000
-Environment=GROUP_ID=1000
 Environment=RELAY_NICKNAME=ChangeMe
 Environment=CONTACT_EMAIL='tor[at]example[dot]com'
 Environment=RELAY_BANDWIDTH_RATE="1 MBytes"
