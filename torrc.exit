@@ -110,6 +110,7 @@ Nickname RELAY_NICKNAME
 #RelayBandwidthBurst 200 KBytes # But allow bursts up to 200KB (1600Kb)
 RelayBandwidthRate RELAY_BANDWIDTH_RATE
 RelayBandwidthBurst RELAY_BANDWIDTH_BURST
+MaxAdvertisedBandwidth MAX_ADVERTISED_BANDWIDTH
 
 ## Use these to restrict the maximum traffic per day, week, or month.
 ## Note that this threshold applies separately to sent and received bytes,

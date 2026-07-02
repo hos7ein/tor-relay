@@ -23,6 +23,7 @@ Environment=CONTACT_EMAIL='tor[at]example[dot]com'
 Environment=RELAY_BANDWIDTH_RATE="2 MBytes"
 Environment=RELAY_BANDWIDTH_BURST="3 MBytes"
 Environment=RELAY_ACCOUNTING_MAX="10 TBytes"
+Environment=MAX_ADVERTISED_BANDWIDTH="1.5 MBytes"
 
 # Ulimits
 Ulimit=nofile=63536:63536
