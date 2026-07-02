@@ -1,0 +1,24 @@
+Containerfile
+  h_f298eb0806ba40 11
+run.sh
+  h_f298eb0806ba40 25
+torrc.exit
+  h_f298eb0806ba40 113
+torrc.middle
+  h_f298eb0806ba40 124
+tor-relay.container
+  h_f298eb0806ba40 26
+torrc.bridge
+  h_f298eb0806ba40 113
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.9",
+  "base_commit_sha": "42cd34304cd05ad5fb6538c35c81ce51f4fda0aa",
+  "prompts": {},
+  "humans": {
+    "h_f298eb0806ba40": {
+      "author": "hos7ein <hossein.a97@gmail.com>"
+    }
+  }
+}
