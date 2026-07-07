@@ -1,0 +1,14 @@
+README.md
+  h_f298eb0806ba40 80-94
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "aadf42885662ae90329b3cb80f1c834bbaad9504",
+  "prompts": {},
+  "humans": {
+    "h_f298eb0806ba40": {
+      "author": "hos7ein <hossein.a97@gmail.com>"
+    }
+  }
+}
