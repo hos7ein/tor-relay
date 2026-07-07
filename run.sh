@@ -22,6 +22,7 @@ for relaytype in bridge middle exit; do
         sed -i "s/CONTACT_EMAIL/${CONTACT_EMAIL}/g" "$file"
         sed -i "s/RELAY_BANDWIDTH_RATE/${RELAY_BANDWIDTH_RATE}/g" "$file"
         sed -i "s/RELAY_BANDWIDTH_BURST/${RELAY_BANDWIDTH_BURST}/g" "$file"
+        sed -i "s/MAX_ADVERTISED_BANDWIDTH/${MAX_ADVERTISED_BANDWIDTH}/g" "$file"
         sed -i "s/RELAY_ORPORT/${RELAY_ORPORT}/g" "$file"
         sed -i "s/RELAY_DIRPORT/${RELAY_DIRPORT}/g" "$file"
         sed -i "s/RELAY_CTRLPORT/${RELAY_CTRLPORT}/g" "$file"
