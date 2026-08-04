@@ -13,7 +13,8 @@ ENV RELAY_NICKNAME="ChangeMe" \
     RELAY_DIRPORT=9030 \
     RELAY_CTRLPORT=9051 \
     RELAY_ACCOUNTING_MAX="1 GBytes" \
-    RELAY_ACCOUNTING_START="day 00:00"
+    RELAY_ACCOUNTING_START="day 00:00" \
+    RELAY_MAX_MEM="512 MB"
 
 # Install packages
 RUN apk update && \

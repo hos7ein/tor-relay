@@ -92,6 +92,7 @@ docker run -d \
 | **RELAY_CTRLPORT**           | Default port used for control interface (ControlPort)                                 | `9051`        |
 | **RELAY_ACCOUNTING_MAX**     | Default threshold for sent and recieve (AccountingMax)                                | `1 GBytes`    |
 | **RELAY_ACCOUNTING_START**   | threshold rest (AccountingStart)                                                      | `day 00:00`   |
+| **RELAY_MAX_MEM**            | threshold above which Tor will stop queueing data (MaxMemInQueues)                    | `512 MB`      |
 
 ### Open nyx
 

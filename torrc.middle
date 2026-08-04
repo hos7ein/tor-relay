@@ -257,3 +257,5 @@ ExitRelay 0
 ## on subfolders are ignored.
 ## The %include option can be used recursively.
 #%include /etc/torrc.d/*.conf
+
+MaxMemInQueues RELAY_MAX_MEM
