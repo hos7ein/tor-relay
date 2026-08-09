@@ -259,3 +259,5 @@ ExitRelay 0
 #%include /etc/torrc.d/*.conf
 
 MaxMemInQueues RELAY_MAX_MEM
+NumCPUs 4
+HardwareAccel 1
