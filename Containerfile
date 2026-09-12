@@ -1,5 +1,5 @@
 # Base
-FROM alpine:3.24
+FROM alpine:latest
 
 LABEL maintainer="hos7ein <hossein.a97@gmail.com>"
 
